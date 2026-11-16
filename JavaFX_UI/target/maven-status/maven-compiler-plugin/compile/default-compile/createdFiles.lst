@@ -1,4 +1,9 @@
-org/example/javafx_ui/Launcher.class
-module-info.class
+org/example/javafx_ui/LoginController.class
+org/example/javafx_ui/RegisterController.class
 org/example/javafx_ui/Application.class
 org/example/javafx_ui/Controller.class
+org/example/javafx_ui/Launcher.class
+org/example/javafx_ui/Splash.class
+module-info.class
+org/example/javafx_ui/SplashController.class
+org/example/javafx_ui/ForgotPasswordController.class

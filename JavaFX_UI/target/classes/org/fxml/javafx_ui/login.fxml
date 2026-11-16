@@ -1,149 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: WHITE;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.javafx_ui.LoginController">
 
-    <children>
 
-        <!-- LEFT SIDE: LOGIN BACKGROUND -->
-        <Rectangle fill="WHITE" height="416.0" layoutX="0.0" layoutY="0.0" stroke="TRANSPARENT" width="303.0" />
+<children>
 
-        <!-- RIGHT SIDE: REGISTER BACKGROUND -->
-        <Rectangle fill="#79a3c9" height="417.0" layoutX="230.0" layoutY="0.0" stroke="TRANSPARENT" width="389.0" />
-
-        <!-- FLIGHTSYNC LOGO -->
-        <ImageView fitHeight="111.0" fitWidth="225.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-
-            <image>
-                <Image url="@../../../images/Flightsync.png" />
-            </image>
-
-        </ImageView>
-
-        <!-- LOGIN SECTION -->
-
-        <Label layoutX="29.0" layoutY="136.0" text="Sign In">
-
-            <font>
-                <Font name="Big Caslon Medium" size="24.0" />
-            </font>
-
-        </Label>
-
-        <Label layoutX="44.0" layoutY="91.0" prefHeight="17.0" prefWidth="176.0" text="Log in to manage your flights and reservations.">
-
-            <font>
-                <Font name="Big Caslon Medium" size="9.0" />
-            </font>
-
-        </Label>
-
-        <Label layoutX="29.0" layoutY="172.0" text="Username">
-
-            <font>
-                <Font name="Big Caslon Medium" size="13.0" />
-            </font>
-
-        </Label>
-
-        <TextField layoutX="29.0" layoutY="190.0" prefHeight="26.0" prefWidth="183.0" promptText="Enter username" />
-
-        <Label layoutX="29.0" layoutY="230.0" text="Password">
-
-            <font>
-                <Font name="Big Caslon Medium" size="13.0" />
-            </font>
-
-        </Label>
-
-        <PasswordField layoutX="29.0" layoutY="248.0" prefHeight="26.0" prefWidth="183.0" promptText="Enter password" />
-
-        <Button alignment="CENTER" layoutX="61.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-radius: 20; -fx-background-color: #79a3c9;" text="Login" textAlignment="CENTER" textFill="WHITE">
-
-            <font>
-                <Font name="Big Caslon Medium" size="13.0" />
-            </font>
-
-        </Button>
-
-        <!-- REGISTRATION SECTION -->
-
-        <Label layoutX="244.0" layoutY="8.0" text="Register" textFill="WHITE">
-
-            <font>
-                <Font name="Big Caslon Medium" size="24.0" />
-            </font>
-
-        </Label>
-
-        <Label layoutX="244.0" layoutY="38.0" prefHeight="17.0" prefWidth="243.0" text="Create an account and start exploring today." textFill="WHITE">
-
-            <font>
-                <Font name="Big Caslon Medium" size="12.0" />
-            </font>
-
-        </Label>
-
-        <TextField layoutX="244.0" layoutY="63.0" prefHeight="26.0" prefWidth="168.0" promptText="First name" style="-fx-background-color: #ffffff;">
+        <Label layoutX="215.0" layoutY="105.0" style="-fx-font-size: 26px;                       -fx-font-weight: bold;" text="Welcome Back!">
          <font>
             <Font name="Big Caslon Medium" size="13.0" />
-         </font></TextField>
+         </font></Label>
 
-        <TextField layoutX="244.0" layoutY="93.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your email" style="-fx-background-color: #ffffff;" />
+        <TextField fx:id="usernameField" layoutX="175" layoutY="145" prefWidth="250" promptText="Username" />
 
-        <TextField layoutX="423.0" layoutY="93.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter SSN" style="-fx-background-color: #ffffff;" />
+        <PasswordField fx:id="passwordField" layoutX="175" layoutY="190" prefWidth="250" promptText="Password" />
 
-        <PasswordField layoutX="244.0" layoutY="213.0" prefHeight="26.0" prefWidth="348.0" promptText="Create a password" style="-fx-background-color: #ffffff;" />
+        <Button layoutX="175" layoutY="245" onAction="#handleLogin" prefWidth="250" style="-fx-background-color: #79a3c9;                        -fx-text-fill: white;" text="Login" />
 
-        <PasswordField layoutX="244.0" layoutY="243.0" prefHeight="26.0" prefWidth="348.0" promptText="Confirm password" style="-fx-background-color: #ffffff;" />
-      <TextField layoutX="423.0" layoutY="63.0" prefHeight="26.0" prefWidth="168.0" promptText="Last name" style="-fx-background-color: #ffffff;" />
-      <TextField layoutX="244.0" layoutY="123.0" prefHeight="26.0" prefWidth="348.0" promptText="Address" style="-fx-background-color: #ffffff;" />
-      <TextField layoutX="244.0" layoutY="153.0" prefHeight="26.0" prefWidth="110.0" promptText="City" style="-fx-background-color: #ffffff;" />
-      <TextField layoutX="363.0" layoutY="153.0" prefHeight="26.0" prefWidth="110.0" promptText="State" style="-fx-background-color: #ffffff;" />
-      <TextField layoutX="482.0" layoutY="153.0" prefHeight="26.0" prefWidth="110.0" promptText="Zipcode" style="-fx-background-color: #ffffff;" />
-        <ChoiceBox layoutX="244.0" layoutY="273.0" prefHeight="26.0" prefWidth="348.0" style="-fx-font-family: 'System'; -fx-font-size: 13px;" value="Select a security question">
+        <Button layoutX="175" layoutY="290" onAction="#goToRegister" prefWidth="250" text="Don't have an account? Register" />
 
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Select a security question" />
-                    <String fx:value="What was the name of your first pet?" />
-                    <String fx:value="What city were you born in?" />
-                    <String fx:value="What is your favorite food?" />
-                    <String fx:value="What was the name of your elementary school?" />
-                </FXCollections>
-            </items>
-
-        </ChoiceBox>
-      <TextField layoutX="244.0" layoutY="183.0" prefHeight="26.0" prefWidth="348.0" promptText="Create a username" style="-fx-background-color: #ffffff;" />
-
-        <!-- CREATE ACCOUNT BUTTON -->
-
-        <Button alignment="CENTER" layoutX="330.0" layoutY="361.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="176.0" style="-fx-background-radius: 20; -fx-background-color: #ffffff;" text="Create Account" textAlignment="CENTER" textFill="#79a3c9">
-
-            <font>
-                <Font name="Big Caslon Medium" size="13.0" />
-            </font>
-
-        </Button>
-      <TextField layoutX="244.0" layoutY="303.0" prefHeight="26.0" prefWidth="348.0" promptText="Enter an answer" style="-fx-background-color: #ffffff;" />
-      <CheckBox layoutX="310.0" layoutY="340.0" mnemonicParsing="false" text="I agree to the Terms and Conditions" textFill="WHITE">
-         <font>
-            <Font name="Big Caslon Medium" size="13.0" />
-         </font>
-      </CheckBox>
-      <Button layoutX="29.0" layoutY="276.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Forgot password?" textFill="#79a3c9">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
+        <Button layoutX="225" layoutY="330" onAction="#goToForgotPassword" prefWidth="150" text="Forgot Password?" />
+      <ImageView fitHeight="120.0" fitWidth="267.0" layoutX="158.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/LOGO.png" />
+         </image>
+      </ImageView>
 
     </children>
-
 </AnchorPane>
